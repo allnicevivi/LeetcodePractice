@@ -6,9 +6,8 @@ class Solution:
         nums.sort()
         res = []
         for i in range(0, len(nums), 3):
-            tmp = nums[i:i+3]
-            if (tmp[1]-tmp[0] > k) or (tmp[2]-tmp[1] > k) or (tmp[2]-tmp[0] > k):
+            if nums[i+2]-nums[i] > k:
                 return []
-            res.append(tmp)
+            res.append(nums[i:i+3])
         
         return res
